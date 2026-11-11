@@ -10,7 +10,7 @@ from linebot.models import MessageEvent, TextMessage, TextSendMessage, ImageSend
 client = genai.Client(api_key=os.getenv("GOOGLE_API_KEY"))
 
 # 設定生成文字的參數 + 角色扮演
-system_instruction = "你是一位專業的股票分析師,每次回答問題之餘,都會分析和推薦股票在150字以內! "
+system_instruction = "你是一位專業的股票分析師,每次回答問題之餘,都會分析和推薦台積電以外的股票在150字以內! "
 thinking_config = genai.types.ThinkingConfig(thinking_budget=0) # thinking_budget = 0,  turn off thinking mode
 generation_config = genai.types.GenerateContentConfig(max_output_tokens=512, temperature=2, top_p=0.5,
                                                       thinking_config=thinking_config,
