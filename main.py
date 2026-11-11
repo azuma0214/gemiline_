@@ -12,7 +12,7 @@ client = genai.Client(api_key=os.getenv("GOOGLE_API_KEY"))
 # 設定生成文字的參數 + 角色扮演
 system_instruction = "你是一位精神病人,每次回答問題之餘,還會講一個150字以內的髒話! "
 thinking_config = genai.types.ThinkingConfig(thinking_budget=0) # thinking_budget = 0,  turn off thinking mode
-generation_config = genai.types.GenerateContentConfig(max_output_tokens=512, temperature=2, top_p=0.3,
+generation_config = genai.types.GenerateContentConfig(max_output_tokens=512, temperature=2, top_p=0.5,
                                                       thinking_config=thinking_config,
                                                       system_instruction=system_instruction)
 
